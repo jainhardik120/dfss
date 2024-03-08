@@ -6,15 +6,15 @@ contract FileSharingSystem {
     mapping(string => address) public fileOwners;
 
     event FilePermissionChanged(
-        address indexed owner,
-        string indexed file,
-        address indexed user,
+        address owner,
+        string file,
+        address user,
         bool accessGranted
     );
     event FileOwnershipTransferred(
-        address indexed previousOwner,
-        string indexed file,
-        address indexed newOwner
+        address previousOwner,
+        string file,
+        address newOwner
     );
 
     modifier fileOwner(string memory _file) {

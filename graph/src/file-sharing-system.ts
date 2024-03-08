@@ -9,9 +9,9 @@ import {
 export function handleFileOwnershipTransferred(
   event: FileOwnershipTransferredEvent
 ): void {
-  let file = File.load(event.params.file);
+  let file = File.load(event.params.file.toString());
   if(file == null){
-    file = new File(event.params.file);
+    file = new File(event.params.file.toString());
     file.creator = event.params.newOwner;
     file.cBlockNumber = event.block.number;
     file.cTransactionHash = event.transaction.hash
@@ -25,7 +25,7 @@ export function handleFileOwnershipTransferred(
 export function handleFilePermissionChanged(
   event: FilePermissionChangedEvent
 ): void {
-  const id = event.params.file.concatI32(event.params.user.toI32());
+  const id = event.params.file.concat(event.params.user.toString());
   let right = AccessRights.load(id);
   if(right == null){
     right = new AccessRights(id);

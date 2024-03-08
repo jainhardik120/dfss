@@ -1,5 +1,5 @@
 type File @entity {
-  id : Bytes!
+  id : String!
   currentOwner : Bytes!
   transactionHash : Bytes!
   blockNumber : BigInt!
@@ -9,8 +9,8 @@ type File @entity {
 }
 
 type AccessRights @entity {
-  id : Bytes!
-  fileId : Bytes!
+  id : String!
+  fileId : String!
   user : Bytes!
   granted : Boolean!
 }

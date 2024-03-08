@@ -8,7 +8,7 @@ dataSources:
     name: FileSharingSystem
     network: sepolia
     source:
-      address: "0x9D405039f90953FF538E66049EAffD8b367052d8"
+      address: "0xC4A79660ea9352e80d293cfAE0cff7a4E600dF42"
       abi: FileSharingSystem
       startBlock: 5442597
     mapping:
@@ -22,8 +22,8 @@ dataSources:
         - name: FileSharingSystem
           file: ./abis/FileSharingSystem.json
       eventHandlers:
-        - event: FileOwnershipTransferred(indexed address,indexed string,indexed address)
+        - event: FileOwnershipTransferred(address,string,address)
           handler: handleFileOwnershipTransferred
-        - event: FilePermissionChanged(indexed address,indexed string,indexed address,bool)
+        - event: FilePermissionChanged(address,string,address,bool)
           handler: handleFilePermissionChanged
       file: ./src/file-sharing-system.ts
