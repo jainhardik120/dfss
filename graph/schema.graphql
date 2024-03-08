@@ -1,0 +1,16 @@
+type File @entity {
+  id : Bytes!
+  currentOwner : Bytes!
+  transactionHash : Bytes!
+  blockNumber : BigInt!
+  creator : Bytes!
+  cTransactionHash : Bytes!
+  cBlockNumber : BigInt!
+}
+
+type AccessRights @entity {
+  id : Bytes!
+  fileId : Bytes!
+  user : Bytes!
+  granted : Boolean!
+}
